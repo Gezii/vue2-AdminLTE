@@ -26,19 +26,23 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
+        <li class="treeview" :class="{'active': $route.path.indexOf('dashboard') >= 0}">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li class="active"><router-link to="/dashboard/index"><i class="fa fa-circle-o"></i> Dashboard v1</router-link></li>
-            <li><router-link to="/dashboard/index2"><i class="fa fa-circle-o"></i> Dashboard v2</router-link></li>
+          <ul class="treeview-menu" :class="{'menu-open': $route.path.indexOf('dashboard') >= 0}">
+            <li :class="{'active': $route.path === '/dashboard/index'}">
+              <router-link to="/dashboard/index"><i class="fa fa-circle-o"></i> Dashboard v1</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/dashboard/index2'}">
+              <router-link to="/dashboard/index2"><i class="fa fa-circle-o"></i> Dashboard v2</router-link>
+            </li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="treeview" :class="{'active': $route.path.indexOf('layout') >= 0}">
           <a href="#">
             <i class="fa fa-files-o"></i>
             <span>Layout Options</span>
@@ -47,21 +51,29 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-            <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-            <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+            <li :class="{'active': $route.path === '/layout/topnav'}">
+              <router-link to="/layout/topnav"><i class="fa fa-circle-o"></i> Top Navigation</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/layout/boxed'}">
+              <router-link to="/layout/boxed"><i class="fa fa-circle-o"></i> Boxed</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/layout/fixed'}">
+              <router-link to="/layout/fixed"><i class="fa fa-circle-o"></i> Fixed</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/layout/collapsed'}">
+              <router-link to="/layout/collapsed"><i class="fa fa-circle-o"></i> Collapsed Sidebar</router-link>
+            </li>
           </ul>
         </li>
-        <li>
-          <a href="pages/widgets.html">
+        <li :class="{'active': $route.path.indexOf('widgets') >= 0}">
+          <router-link to="/widgets">
             <i class="fa fa-th"></i> <span>Widgets</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green">new</small>
             </span>
-          </a>
+          </router-link>
         </li>
-        <li class="treeview">
+        <li class="treeview" :class="{'active': $route.path.indexOf('charts') >= 0}">
           <a href="#">
             <i class="fa fa-pie-chart"></i>
             <span>Charts</span>
@@ -70,13 +82,21 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+            <li :class="{'active': $route.path === '/charts/chartjs'}">
+              <router-link to="/charts/chartjs"><i class="fa fa-circle-o"></i> ChartJS</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/charts/morris'}">
+              <router-link to="/charts/morris"><i class="fa fa-circle-o"></i> Morris</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/charts/flot'}">
+              <router-link to="/charts/flot"><i class="fa fa-circle-o"></i> Flot</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/charts/inline'}">
+              <router-link to="/charts/inline"><i class="fa fa-circle-o"></i> Inline charts</router-link>
+            </li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="treeview" :class="{'active': $route.path.indexOf('elements') >= 0}">
           <a href="#">
             <i class="fa fa-laptop"></i>
             <span>UI Elements</span>
@@ -85,9 +105,15 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-            <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-            <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
+            <li :class="{'active': $route.path === '/elements/general'}">
+              <router-link to="/elements/general"><i class="fa fa-circle-o"></i> General</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/elements/icons'}">
+              <router-link to="/elements/icons"><i class="fa fa-circle-o"></i> Icons</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/elements/buttons'}">
+              <router-link to="/elements/buttons"><i class="fa fa-circle-o"></i> Buttons</router-link>
+            </li>
             <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
             <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
             <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>

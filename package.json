@@ -1,7 +1,7 @@
 {
   "name": "vue2-admin",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "Admin control Panel Theme That Is Based On Vue2 & AdminLTE",
   "author": "pigeon0312@gmail.com",
   "private": true,
   "scripts": {

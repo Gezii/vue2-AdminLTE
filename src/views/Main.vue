@@ -35,7 +35,7 @@ import NavTop from '../components/NavTop'
 
 export default {
   mounted() {
-    
+    // document.querySelector("body").className = "hold-transition skin-blue sidebar-mini";
   },
   components: {
     NavLeft,

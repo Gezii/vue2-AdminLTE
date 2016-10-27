@@ -1,6 +1,6 @@
 # vue2-admin
 
-> A Vue.js project
+> Admin control Panel Theme That Is Based On [Vue2](https://github.com/vuejs/vue) & [AdminLTE](https://github.com/almasaeed2010/AdminLTE)
 
 ## Build Setup
 
