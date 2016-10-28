@@ -22,6 +22,13 @@ import Inline from './views/charts/Inline'
 import General from './views/elements/General'
 import Icons from './views/elements/Icons'
 import Buttons from './views/elements/Buttons'
+import Sliders from './views/elements/Sliders'
+import Timeline from './views/elements/Timeline'
+import Modals from './views/elements/Modals'
+
+import Generalform from './views/forms/General'
+import Advance from './views/forms/Advance'
+import Editors from './views/forms/Editors'
 
 
 Vue.use(Router);
@@ -48,7 +55,13 @@ export default new Router({
         { path: '/charts/inline', component: Inline, name: 'inline' },
         { path: '/elements/general', component: General, name: 'general' },
         { path: '/elements/icons', component: Icons, name: 'icons' },
-        { path: '/elements/buttons', component: Buttons, name: 'buttons' }
+        { path: '/elements/buttons', component: Buttons, name: 'buttons' },
+        { path: '/elements/sliders', component: Sliders, name: 'sliders' },
+        { path: '/elements/timeline', component: Timeline, name: 'timeline' },
+        { path: '/elements/modals', component: Modals, name: 'modals' },
+        { path: '/forms/general', component: Generalform, name: 'generalfrom' },
+        { path: '/forms/advance', component: Advance, name: 'advance' },
+        { path: '/forms/editors', component: Editors, name: 'editors' }
       ],
       beforeEnter: (to, from, next) => {
         // isLogin() ? next() : next('/');

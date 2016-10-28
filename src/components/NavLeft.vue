@@ -114,12 +114,18 @@
             <li :class="{'active': $route.path === '/elements/buttons'}">
               <router-link to="/elements/buttons"><i class="fa fa-circle-o"></i> Buttons</router-link>
             </li>
-            <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-            <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-            <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+            <li :class="{'active': $route.path === '/elements/sliders'}">
+              <router-link to="/elements/sliders"><i class="fa fa-circle-o"></i> Sliders</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/elements/timeline'}">
+              <router-link to="/elements/timeline"><i class="fa fa-circle-o"></i> Timeline</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/elements/modals'}">
+              <router-link to="/elements/modals"><i class="fa fa-circle-o"></i> Modals</router-link>
+            </li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="treeview" :class="{'active': $route.path.indexOf('forms') >= 0}">
           <a href="#">
             <i class="fa fa-edit"></i> <span>Forms</span>
             <span class="pull-right-container">
@@ -127,9 +133,15 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-            <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-            <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+            <li :class="{'active': $route.path === '/forms/general'}">
+              <router-link to="/forms/general"><i class="fa fa-circle-o"></i> General Elements</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/forms/advance'}">
+              <router-link to="/forms/advance"><i class="fa fa-circle-o"></i> Advanced Elements</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/forms/editors'}">
+              <router-link to="/forms/editors"><i class="fa fa-circle-o"></i> Editors</router-link>
+            </li>
           </ul>
         </li>
         <li class="treeview">
