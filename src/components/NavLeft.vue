@@ -144,7 +144,7 @@
             </li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="treeview" :class="{'active': $route.path.indexOf('tables') >= 0}">
           <a href="#">
             <i class="fa fa-table"></i> <span>Tables</span>
             <span class="pull-right-container">
@@ -152,30 +152,47 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+            <li :class="{'active': $route.path === '/tables/simple'}">
+              <router-link to="/tables/simple"><i class="fa fa-circle-o"></i> Simple tables</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/tables/data'}">
+              <router-link to="/tables/data"><i class="fa fa-circle-o"></i> Data tables</router-link>
+            </li>
           </ul>
         </li>
-        <li>
-          <a href="pages/calendar.html">
+        <li :class="{'active': $route.path.indexOf('calendar') >= 0}">
+          <router-link to="/calendar">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-red">3</small>
               <small class="label pull-right bg-blue">17</small>
             </span>
-          </a>
+          </router-link>
         </li>
-        <li>
-          <a href="pages/mailbox/mailbox.html">
+        <li class="treeview" :class="{'active': $route.path.indexOf('mailbox') >= 0}">
+          <a href="mailbox.html">
             <i class="fa fa-envelope"></i> <span>Mailbox</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-yellow">12</small>
-              <small class="label pull-right bg-green">16</small>
-              <small class="label pull-right bg-red">5</small>
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
+          <ul class="treeview-menu">
+            <li :class="{'active': $route.path === '/mailbox/inbox'}">
+              <router-link to="/mailbox/inbox">Inbox
+                <span class="pull-right-container">
+                  <span class="label label-primary pull-right">13</span>
+                </span>
+              </router-link>
+            </li>
+            <li :class="{'active': $route.path === '/mailbox/compose'}">
+              <router-link to="/mailbox/compose">Compose</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/mailbox/read'}">
+              <router-link to="/mailbox/read">Read</router-link>
+            </li>
+          </ul>
         </li>
-        <li class="treeview">
+        <li class="treeview" :class="{'active': $route.path.indexOf('examples') >= 0}">
           <a href="#">
             <i class="fa fa-folder"></i> <span>Examples</span>
             <span class="pull-right-container">
@@ -183,15 +200,33 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-            <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-            <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-            <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-            <li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-            <li><a href="pages/examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-            <li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-            <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-            <li><a href="pages/examples/pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
+            <li :class="{'active': $route.path === '/examples/invoice'}">
+              <router-link to="/examples/invoice"><i class="fa fa-circle-o"></i> Invoice</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/examples/profile'}">
+              <router-link to="/examples/profile"><i class="fa fa-circle-o"></i> Profile</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/examples/login'}">
+              <router-link to="/examples/login"><i class="fa fa-circle-o"></i> Login</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/examples/register'}">
+              <router-link to="/examples/register"><i class="fa fa-circle-o"></i> Register</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/examples/lockscreen'}">
+              <router-link to="/examples/lockscreen"><i class="fa fa-circle-o"></i> Lockscreen</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/examples/404'}">
+              <router-link to="/examples/404"><i class="fa fa-circle-o"></i> 404 Error</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/examples/500'}">
+              <router-link to="/examples/500"><i class="fa fa-circle-o"></i> 500 Error</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/examples/blank'}">
+              <router-link to="/examples/blank"><i class="fa fa-circle-o"></i> Blank Page</router-link>
+            </li>
+            <li :class="{'active': $route.path === '/examples/pace'}">
+              <router-link to="/examples/pace"><i class="fa fa-circle-o"></i> Pace Page</router-link>
+            </li>
           </ul>
         </li>
         <li class="treeview">

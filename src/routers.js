@@ -30,6 +30,25 @@ import Generalform from './views/forms/General'
 import Advance from './views/forms/Advance'
 import Editors from './views/forms/Editors'
 
+import SimpleTable from './views/tables/Simple'
+import DataTable from './views/tables/Data'
+
+import Calendar from './views/calendar/Calendar'
+
+import Inbox from './views/mailbox/Inbox'
+import Compose from './views/mailbox/Compose'
+import ReadMail from './views/mailbox/Read'
+
+import Invoice from './views/examples/Invoice'
+import Profile from './views/examples/Profile'
+import Login from './views/examples/Login'
+import Register from './views/examples/Register'
+import Lockscreen from './views/examples/Lockscreen'
+import Notfound from './views/examples/404'
+import Servererror from './views/examples/500'
+import Blank from './views/examples/Blank'
+import Pace from './views/examples/Pace'
+
 
 Vue.use(Router);
 
@@ -61,7 +80,19 @@ export default new Router({
         { path: '/elements/modals', component: Modals, name: 'modals' },
         { path: '/forms/general', component: Generalform, name: 'generalfrom' },
         { path: '/forms/advance', component: Advance, name: 'advance' },
-        { path: '/forms/editors', component: Editors, name: 'editors' }
+        { path: '/forms/editors', component: Editors, name: 'editors' },
+        { path: '/tables/simple', component: SimpleTable, name: 'simpleTable' },
+        { path: '/tables/data', component: DataTable, name: 'dataTable' },
+        { path: '/calendar', component: Calendar, name: 'calendar' },
+        { path: '/mailbox/inbox', component: Inbox, name: 'inbox' },
+        { path: '/mailbox/compose', component: Compose, name: 'compose' },
+        { path: '/mailbox/read', component: ReadMail, name: 'readMail' },
+        { path: '/examples/invoice', component: Invoice, name: 'invoice' },
+        { path: '/examples/profile', component: Profile, name: 'profile' },
+        { path: '/examples/404', component: Notfound, name: '404' },
+        { path: '/examples/500', component: Servererror, name: '500' },
+        { path: '/examples/blank', component: Blank, name: 'blank' },
+        { path: '/examples/pace', component: Pace, name: 'pace' }
       ],
       beforeEnter: (to, from, next) => {
         // isLogin() ? next() : next('/');
@@ -69,6 +100,9 @@ export default new Router({
       }
     },
     { path: '/layout/topnav', component: Topnav, name: 'topnav' },
+    { path: '/examples/login', component: Login, name: 'login' },
+    { path: '/examples/register', component: Register, name: 'register' },
+    { path: '/examples/lockscreen', component: Lockscreen, name: 'lockscreen' },
     { path: '*', redirect: '/' },
   ],
 });
