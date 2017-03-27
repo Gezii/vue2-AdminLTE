@@ -7,6 +7,7 @@
 <script>
 import 'admin-lte/dist/js/app.js';
 // import 'admin-lte/plugins/pace/pace.min.js';
+$.AdminLTE.options.enableBSToppltip = false;
 
 export default {
 }
